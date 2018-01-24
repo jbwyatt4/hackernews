@@ -97,7 +97,7 @@ const Search = ({ value, onChange, children }) =>
 // in the key div you will see an example of using css in the span, in the JSX
 // itself
 const Table = ({ list, pattern, onDismiss }) =>
-  <div clasName="table">
+  <div className="table">
     {list.filter(isSearched(pattern)).map(item =>
     <div key={item.objectID} className="table-row">
       <span style={{ width: '40%' }}>
