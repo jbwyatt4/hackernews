@@ -54,18 +54,16 @@ class App extends Component {
     this.setState({ searchTerm: event.target.value });
   }
 
+  // item must be the instance the method is called on
   onDismiss(id) {
-    const updatedList = this.state.list.filter(function isNotId(item) {
-      return item.objectID !== id;
+    const isNotId = item => item.objectID !== id;
+    const updatedHits = this.state.result.hits.filter(isNotId);
+    this.setState({
+      // have to create a new object to get around immunadbility, blah!
+      //result: Object.assign({}, this.state.result, { hits: updatedHits })
+      // use the spread operator to make it easier
+      result: { ...this.state.result, hits: updatedHits }
     });
-
-    // or
-    // const isNotId = item => item.objectID !== id;
-    // const updatedList = this.state.list.filter(isNotId);
-    // or much easier to read
-    // const updatedList = this.state.list.filter(item => item.objectID !== id);
-
-    this.setState({ list: updatedList });
   }
 
   render() {
