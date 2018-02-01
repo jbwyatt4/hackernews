@@ -174,7 +174,7 @@ const Search = ({
     </form>
 
 // in the key div you will see an example of using css in the span, in the JSX
-// itself a a a a a a a
+// itself
 const Table = ({ list, onDismiss }) =>
   <div className="table">
     {list.map(item =>
