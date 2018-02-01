@@ -12,15 +12,6 @@ const PARAM_SEARCH = 'query=';
 const PARAM_PAGE = 'page=';
 const PARAM_HPP = 'hitsPerPage=';
 
-function isSearched(searchTerm) {
-  return function(item) {
-    return item.title.toLowerCase().includes(searchTerm.toLowerCase());
-  }
-}
-// or
-// const isSearched = searchTerm => item =>
-//   item.title.toLowerCase().includes(searchTerm.toLowerCase());
-
 class App extends Component {
 
   constructor(props) {
@@ -50,7 +41,7 @@ class App extends Component {
     const { searchKey, results } = this.state;
 
     const oldHits = page !== 0
-      ? this.state.result.hits
+      ? results[searchKey].hits
       : [];
 
     const updatedHits = [
@@ -90,9 +81,10 @@ class App extends Component {
     if (this.needsToSeachTopStories(searchTerm)) {
       this.fetchSearchTopStories(searchTerm);
     }
+
+    event.preventDefault();
   }
 
-  // item must be the instance the method is called on
   onDismiss(id) {
     const { searchKey, results } = this.state;
     const { hits, page } = results[searchKey];
@@ -106,7 +98,8 @@ class App extends Component {
       // use the spread operator to make it easier
       results: {
         ...results,
-        [searchKey]: { hits: updatedHits, page } }
+        [searchKey]: { hits: updatedHits, page }
+      }
     });
   }
 
@@ -189,9 +182,15 @@ const Table = ({ list, onDismiss }) =>
       <span style={{ width: '40%' }}>
         <a href={item.url}>{item.title}</a>
       </span>
-      <span style={{ width: '30%' }}>{item.author}</span>
-      <span style={{ width: '10%' }}>{item.num_comments}</span>
-      <span style={{ width: '10%' }}>{item.points}</span>
+      <span style={{ width: '30%' }}>
+        {item.author}
+      </span>
+      <span style={{ width: '10%' }}>
+        {item.num_comments}
+      </span>
+      <span style={{ width: '10%' }}>
+        {item.points}
+      </span>
       <span style={{ width: '10%' }}>
       <Button
         onClick={() => onDismiss(item.objectID)}
