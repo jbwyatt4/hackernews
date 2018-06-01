@@ -1,9 +1,11 @@
 ## Quick Start
 npm test
+
 npm start
 
 ### Dev if moving to a new machine
 npm install
+
 sudo npm -g create-react-app
 
 
