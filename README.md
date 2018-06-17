@@ -1,3 +1,7 @@
+# Hacker News React Frontend
+
+A simple ReactJS frontend for the Hacker News API based on the Road to Learn React.
+
 ## Quick Start
 npm test
 
@@ -8,6 +12,15 @@ npm install
 
 sudo npm -g create-react-app
 
+### Misc
+
+Copyright (C) 2017-2018 John B. Wyatt IV
+
+AGPL v3 or higher.
+
+See license text at:
+
+https://spdx.org/licenses/AGPL-3.0-or-later.html
 
 ## Table of Contents
 

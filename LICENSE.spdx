@@ -1,0 +1,6 @@
+SPDXVersion: SPDX-2.0
+Creator: John B. Wyatt IV
+PackageName: hackernews_apifrontend
+PackageOriginator: John B. Wyatt IV
+PackageHomePage: https://gitlab.com/jbwyatt4/hackernews_apifrontend
+PackageLicenseDeclared: AGPL-3.0-or-later
