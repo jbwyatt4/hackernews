@@ -2,6 +2,10 @@
 
 A simple ReactJS frontend for the Hacker News API based on the Road to Learn React.
 
+If you are viewing this on GitHub, please goto to the GitLab repo which gets updated more frequently, if I am still updating this repo.
+
+https://gitlab.com/jbwyatt4/hackernews
+
 ## Quick Start
 npm test
 
